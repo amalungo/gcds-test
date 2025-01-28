@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Icons Font Awesome (to access icons, import Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous">
+
+<!-- GC Design System -->
+<link rel="stylesheet" href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.31.0/dist/gcds/gcds.css">
+<script type="module" src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.31.0/dist/gcds/gcds.esm.js"></script>
+
+<script nomodule src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.31.0/dist/gcds/gcds.js"></script>
+</head>
+<body>
+    <!---------- Header ---------->
+    <!-- TODO: Modify the lang-href to set the language toggle's URL. -->
+    <!-- TODO: Update the skip-to-href with the main content container's id. -->
+    <gcds-header lang-href="#" skip-to-href="#main-content">
+        <!-- The slot="search" attribute adds the search component to the header. -->
+        <gcds-search slot="search"></gcds-search>
+  
+        <!-- The slot="breadcrumb" attribute adds the breadcrumbs component to the header. -->
+        <gcds-breadcrumbs slot="breadcrumb">
+          <!-- TODO: Adjust the breadcrumb links with the correct ones for your site. -->
+          <gcds-breadcrumbs-item href="#">Home</gcds-breadcrumbs-item>
+          <gcds-breadcrumbs-item href="#">V1</gcds-breadcrumbs-item>
+        </gcds-breadcrumbs>
+      </gcds-header>
+
+
+    <gcds-container
+      id="main-content"
+      main-container
+      size="xl"
+      centered
+      tag="main"
+    >
+
+    <gcds-heading tag="h2">
+        Test page
+      </gcds-heading>
+
+<gcds-card
+  card-title="Lorem ipsum dolor"
+  href="#"
+  badge="New"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  img-src="https://esdc.prv/en/department/dm/paul-thompson/images/paul-thompson-banner-en.jpg"
+>
+</gcds-card>
+
+<hr>
+
+
+
+
+<div class="row mrgn-tp-xl">
+	<div class="col-md-8">
+		<!-- Cohabit variant here -->
+        <gcds-card
+  card-title="Card title link"
+  href="#"
+  badge="badge"
+  description="Description or supporting text relating to the headline."
+></gcds-card>
+	</div>
+	<div class="col-md-4">
+		<!-- Other component here -->
+        <gcds-card
+  card-title="Card title link"
+  href="#"
+  badge="badge"
+  description="Description or supporting text relating to the headline."
+></gcds-card>
+	</div>
+	</div>
+
+<hr>
+
+
+<div class="row mrgn-tp-xl">
+	<div class="col-md-8">
+		<!-- Cohabit variant here -->
+        <gcds-card
+        card-title="Lorem ipsum dolor"
+        href="#"
+        badge="New"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        img-src="https://esdc.prv/en/department/dm/paul-thompson/images/paul-thompson-banner-en.jpg"
+      >
+      </gcds-card>
+	</div>
+	<div class="col-md-4">
+		<!-- Other component here -->
+        <gcds-card
+        card-title="Lorem ipsum dolor"
+        href="#"
+        badge="New"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        img-src="https://esdc.prv/en/department/dm/paul-thompson/images/paul-thompson-banner-en.jpg"
+      >
+      </gcds-card>
+	</div>
+	</div>
+
+<hr>
+
+    <gcds-button>
+        Button label
+      </gcds-button>
+
+
+
+<hr>
+
+<gcds-grid tag="article" columns-desktop="1fr 1fr 1fr" columns-tablet="1fr 1fr" columns="1fr">
+    <p>This is some example content to display the grid component.</p>
+    <p>This is some example content to display the grid component.</p>
+    <p>This is some example content to display the grid component.</p>
+</gcds-grid>
+    
+<gcds-grid tag="article" columns-desktop="1fr 1fr 1fr" columns-tablet="1fr 1fr" columns="1fr">
+    <gcds-button>
+        Button label 1
+      </gcds-button>
+      <gcds-button>
+        Button label 2
+      </gcds-button>
+      <gcds-button>
+        Button label 3
+      </gcds-button>
+</gcds-grid>
+
+
+
+
+
+
+      </gcds-container>
+
+      
+
+
+    <!---------- Footer ---------->
+    <!-- TODO: Update or remove the contextual footer heading and links as needed. -->
+    <gcds-footer
+      display="full"
+      contextual-heading="Canadian Digital Service"
+      contextual-links='{ "Why GC Notify": "#","Features": "#", "Activity on GC Notify": "#"}'
+    >
+</body>
+</html>
