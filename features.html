@@ -48,26 +48,35 @@
     </gcds-text>    
   </section>
   
+  <gcds-heading tag="h3">
+   Features
+  </gcds-heading>
+
   <gcds-grid
     tag="div" 
     columns-desktop="1fr 1fr 1fr" 
     columns-tablet="1fr 1fr" 
     columns="1fr"
     class="hydrated"
+    gap="150" 
+    gap-tablet="150" 
+    gap-desktop="150"
     >
       <gcds-card
         card-title="Protect yourself from fraud"
         href="https://www.canada.ca/en/immigration-refugees-citizenship/services/protect-fraud.html"
         description="Learn more about the risks of immigration-related fraud and the ways to recognize, avoid and report potential fraud and scams"
         img-src="./fraud-feature-link.jpg"
+        imgAlt="Protect yourself from fraud"
       >
       </gcds-card>
 
       <gcds-card
         card-title="Express Entry"
         href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html"
-        description="Express Entry provides a faster way for skilled workers to settle in Canada"
+        description="Express Entry provides a faster way for skilled workers to settle in Canada. Compare with <a href='https://www.canada.ca/en/services/immigration-citizenship.html'>Features on the IRCC</a> page."
         img-src="./ee.jpg"
+        imgAlt="Express Entry"
       >
       </gcds-card>
 
@@ -76,6 +85,7 @@
         href="https://ircc.canada.ca/explore-programs/index.asp"
         description="Answer a few questions to see different ways you might be able to come to Canada"
         img-src="./program-finder.png"
+        imgAlt="Explore immigration programs"
       >
       </gcds-card>
   </gcds-grid>
