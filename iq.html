@@ -12,6 +12,89 @@
 <script type="module" src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.31.0/dist/gcds/gcds.esm.js"></script>
 
 <script nomodule src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.31.0/dist/gcds/gcds.js"></script>
+<script>
+  /* function processRBtns() {
+    var radios = document.getElementsByName('fav_language');
+    // var choiceMade = document.getElementById('choiceMade');
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        console.log('You chose: ' + radios[i].value);
+        // choiceMade.innerHTML = 'You chose: ' + radios[i].value;
+        break;
+      }
+    }
+  } */
+ function processRBtns() {
+    var html = document.getElementById('html');
+    var css = document.getElementById('css');
+    var js = document.getElementById('js');
+    var jv = document.getElementById('jv');
+    var cplus = document.getElementById('cplus');
+    if (html.checked) {
+      console.log(html.value);
+    } else if (css.checked) {
+      console.log(css.value);
+    } else if (js.checked) {
+      console.log(js.value);
+    } else if (jv.checked) {
+      console.log(jv.value);
+    } else if (cplus.checked) {
+      console.log(cplus.value);
+    }
+    /* var radios = document.getElementsByName('fav_language');
+    var choiceMade = document.getElementById('choiceMade');
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        console.log('You chose: ' + radios[i].value);
+        choiceMade.innerHTML = 'You chose: ' + radios[i].value;
+        break;
+      }
+    } */
+  }
+
+  function gcdsChoiceMade() {
+    if (document.getElementById('radio1').checked) {
+      console.log('You chose: Go to GC DS website');
+    } else if (document.getElementById('radio2').checked) {
+      console.log('You chose: Go to Canada.ca website');
+    }
+    /* var radios = document.getElementById('fieldDefault');
+    // var choiceMade = document.getElementById('choiceMade');
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        console.log('You chose: ' + radios[i].value);
+        // choiceMade.innerHTML = 'You chose: ' + radios[i].value;
+        break;
+      }
+    } */
+  }
+
+  function goSomewhere() {
+    /* var radios = document.getElementsByName('fieldDefault');
+    var choiceMade = document.getElementById('choiceMade');
+    for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+        console.log('You chose: ' + radios[i].value);
+        choiceMade.innerHTML = 'You chose: ' + radios[i].value;
+        break;
+      }
+    } */
+    var dest = document.querySelector('gcds-radio-group').shadowRoot.querySelector('input[type=radio]:checked').value;
+    console.log(dest);
+
+    window.location.href = dest;
+
+    // document.getElementById('choiceMade').innerHTML = 'Go to: <a class="btn" href="'  + dest + '">' + dest + '</a>';
+    document.getElementById('goTo').innerHTML = '<gcds-button type="link" button-id="goTo" href="' + dest + '"> Continue </gcds-button>';
+
+    /* if (document.getElementById('radio1').checked) {
+      console.log('You chose: Go to GC DS website');
+    } else if (document.getElementById('radio2').checked) {
+      console.log('You chose: Go to Canada.ca website');
+    } */
+  }
+</script>
+
 </head>
 <body>
     <!---------- Header ---------->
@@ -86,7 +169,7 @@
       options='[
         { "label": "Go to GC DS website", "id": "radio1", "value": "https://canada.ca", "hint": "Select this to go to https://canada.ca."},
         { "label": "Go to Canada.ca website", "id": "radio2", "value": "https://design-system.alpha.canada.ca", "hint": "Choose this option to go to https://design-system.alpha.canada.ca."}
-      ]'
+      ]'     
     >
     </gcds-radio-group>
 
@@ -96,14 +179,31 @@
     Back
   </gcds-button> -->
 
-  <gcds-button button-role="primary" type="submit">
+  <gcds-button button-role="primary" type="submit" onclick="goSomewhere()">
     Continue
   </gcds-button>
 
+  <!-- <button id="goTo"></button>
+
+  <gcds-button type="link" button-id="goTo" href="#"> Continue </gcds-button>
+
+  <gcds-button type="link" button-id="goTo" href="https://canada.ca">
+    Button label
+  </gcds-button> -->
+
 </form>
 
+  <!-- <div id="choiceMade"></div>
 
-
+  <hr>
+  <form action="#" onchange="processRBtns()">
+    <input type="radio" id="html" name="fav_language" value="HTML"> HTML
+    <input type="radio" id="css" name="fav_language" value="CSS"> CSS
+    <input type="radio" id="js" name="fav_language" value="JavaScript"> JavaScript
+    <input type="radio" id="jv" name="fav_language" value="Java"> Java
+    <input type="radio" id="cplus" name="fav_language" value="C++"> C++
+    <button onclick="processRBtns()">Show selection</button>
+  </form> -->
 
   <!-- <form 
     class="my-600 contact-us-form" 
@@ -163,8 +263,6 @@
 
   </form> -->
 
-<hr>
-
   <gcds-details details-title="Components used">
       <p><strong><a href="https://design-system.alpha.canada.ca/en/components/container/">Container</a></strong> to create margins left and right side margins.</p>
       <p><strong><a href="https://design-system.alpha.canada.ca/en/components/details/">Details</a></strong> this very component.</p>
@@ -173,6 +271,8 @@
       <p><strong><a href="">Radio buttons</a></strong> to lay out text inside 'p' tags in columns. Fully responsive. Also works well with the buttons.</p>
       <!-- <p><strong>Obs:</strong> can't seem to be able to lign the <em>Card</em>> component side by side, neither with <em>Grid</em></p> -->
     </gcds-details>
+
+    <p>&nbsp;</p>
 
   </gcds-container>
 
@@ -183,5 +283,6 @@
       contextual-heading="Canadian Digital Service"
       contextual-links='{ "Why GC Notify": "#","Features": "#", "Activity on GC Notify": "#"}'
     >
+    </gcds-footer>
 </body>
 </html>
